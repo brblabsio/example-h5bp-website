@@ -11,7 +11,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "package": "rm -f dist.tar.gz && tar czvf dist.tar.gz dist",
+    "deploy": "scp -i ~/.ssh/SSH_PRIVATE_KEY.pem dist.tar.gz ubuntu@YOUR_SERVER_IP:~"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
